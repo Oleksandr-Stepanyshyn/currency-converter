@@ -43,7 +43,7 @@ export const Main = () => {
             })}
           </Select>
           <Input
-            type="text"
+            type="number"
             name="firstValue"
             autocomplete="off"
             placeholder="100.00"
@@ -77,7 +77,7 @@ export const Main = () => {
             type="text"
             name="secondValue"
             autocomplete="off"
-            placeholder="2941.00"
+            placeholder="2900.00"
             value={secondValue}
             onChange={handleChange}
           />
