@@ -29,9 +29,9 @@ export const useCurrencyExchange = () => {
       return getExchangeRate(secondCurrency, firstCurrency, value);
     }
     if (name === 'firstCurrency') {
-      return getExchangeRate(value, secondCurrency, firstValue);
+      return getExchangeRate(secondCurrency, value, secondValue);
     }
-    return getExchangeRate(value, firstCurrency, secondValue);
+    return getExchangeRate(firstCurrency, value, firstValue);
   };
 
   const replacedValue = (name, value, exchangeValue) => {
@@ -48,12 +48,12 @@ export const useCurrencyExchange = () => {
 
       case 'firstCurrency':
         setFirstCurrency(value);
-        setSecondValue(exchangeValue);
+        setFirstValue(exchangeValue);
         break;
 
       case 'secondCurrency':
         setSecondCurrency(value);
-        setFirstValue(exchangeValue);
+        setSecondValue(exchangeValue);
         break;
 
       default:
@@ -62,7 +62,7 @@ export const useCurrencyExchange = () => {
   };
 
   const handleChange = async e => {
-    const { name, value } = e.currentTarget;
+    const { name, value } = e.target;
 
     if (!value) {
       setFirstValue('');
